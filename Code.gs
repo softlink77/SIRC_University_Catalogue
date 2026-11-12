@@ -101,3 +101,9 @@ function getOrCreateFolder_() {
 function sanitizeFileName_(name) {
   return String(name).replace(/[\\/:*?"<>|]/g, '_').slice(0, 150);
 }
+
+function setupCatalogue() {
+  const ss = getOrCreateSpreadsheet_();
+  getOrCreateSheet_(ss);
+  Logger.log("Spreadsheet URL: " + ss.getUrl());
+}
