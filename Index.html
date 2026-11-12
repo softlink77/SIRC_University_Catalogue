@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#243b53">
+  <title>University Catalogue Entry | SIRC IIT Kharagpur</title>
+  <style>
+    :root{--ink:#243b53;--muted:#62748a;--line:#dce4ec;--paper:#f5f7fa;--white:#fff;--accent:#315b7d;--soft:#edf3f8;--danger:#a33a3a;--success:#216b4a}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:#253443;font:15px/1.55 Arial,Helvetica,sans-serif}
+    a{color:var(--accent)}.topbar{background:var(--ink);color:#fff;padding:16px 22px}.top-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}.mark{width:42px;height:42px;border:1px solid #c9d7e3;border-radius:50%;display:grid;place-items:center;font-weight:700;letter-spacing:-1px}.brand strong{display:block;font-size:15px}.brand span{display:block;color:#d4e0e9;font-size:12px}.topbar a{color:#fff;font-size:13px}
+    main{max-width:900px;margin:30px auto;padding:0 18px 50px}.intro{margin-bottom:22px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent);font-weight:700}.intro h1{font-size:29px;line-height:1.2;margin:6px 0 8px;color:var(--ink)}.intro p{color:var(--muted);margin:0;max-width:700px}
+    .notice{background:#edf3f8;border-left:4px solid #6b8ba5;padding:11px 14px;border-radius:5px;color:#40576c;font-size:13px;margin:18px 0 22px}
+    form{display:grid;gap:16px}.panel{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px;box-shadow:0 2px 8px #1e33440a}.panel-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:18px}.num{flex:none;background:var(--soft);color:var(--accent);font-weight:700;width:30px;height:30px;border-radius:50%;display:grid;place-items:center}.panel h2{font-size:18px;color:var(--ink);margin:1px 0 2px}.panel-head p{margin:0;color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 18px}.field{min-width:0}.field.full{grid-column:1/-1}label{display:block;font-weight:600;font-size:13px;margin-bottom:6px;color:#34495e}label .optional{font-weight:400;color:var(--muted)}
+    input,select,textarea{width:100%;border:1px solid #cbd6e0;border-radius:6px;padding:10px 11px;font:inherit;font-size:14px;background:#fff;color:#253443}input:focus,select:focus,textarea:focus{outline:3px solid #b9d0e2;outline-offset:1px;border-color:#527b9c}textarea{min-height:88px;resize:vertical}small.help{display:block;color:var(--muted);font-size:12px;margin-top:5px}
+    .repeat-list{display:grid;gap:10px}.repeat-row{display:grid;grid-template-columns:1fr auto;gap:8px}.mini-btn{border:1px solid var(--line);background:#fff;color:var(--accent);border-radius:6px;padding:8px 11px;cursor:pointer;font-weight:600}.add-btn{margin-top:10px}.filebox{border:1px dashed #aebdca;background:#fafcfd;padding:14px;border-radius:7px}.filebox input{border:0;padding:4px 0}.file-list{font-size:12px;color:var(--muted);margin-top:6px}
+    .actions{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.submit{border:0;background:var(--ink);color:#fff;padding:12px 20px;border-radius:7px;font-weight:700;font-size:14px;cursor:pointer}.submit:hover{background:#345572}.submit:disabled{opacity:.6;cursor:wait}.status{font-size:13px;color:var(--muted)}.status.error{color:var(--danger)}.status.success{color:var(--success)}
+    .success-card{display:none;background:#edf7f1;border:1px solid #c8e3d2;color:#23583d;padding:15px;border-radius:8px;margin-bottom:16px}.success-card.show{display:block}.footer{text-align:center;color:var(--muted);font-size:12px;padding:22px 0}.required-note{font-size:12px;color:var(--muted);margin:0 0 2px}
+    @media(max-width:640px){.top-inner{align-items:flex-start}.topbar{padding:13px 16px}.brand span{max-width:220px}.top-inner>a{max-width:105px;text-align:right}.intro h1{font-size:25px}.panel{padding:17px}.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.actions{align-items:stretch}.submit{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="top-inner">
+      <div class="brand">
+        <div class="mark" aria-hidden="true">IR</div>
+        <div><strong>Students' International Relations Cell</strong><span>IIT Kharagpur · University Catalogue</span></div>
+      </div>
+      <a href="https://ircell.iitkgp.ac.in/" target="_blank" rel="noopener">Official SIRC website ↗</a>
+    </div>
+  </header>
+  <main>
+    <section class="intro">
+      <div class="eyebrow">Internal contribution form</div>
+      <h1>University Catalogue Entry</h1>
+      <p>Submit the key details of one international university. Please use reliable sources and indicate the year for rankings, fees and acceptance-rate figures wherever possible.</p>
+      <div class="notice">One submission = one university. Fields marked <b>*</b> are required. If a figure is unavailable or not officially published, leave it blank rather than estimating it.</div>
+    </section>
+    <div id="successCard" class="success-card" role="status" aria-live="polite">
+      <strong>Submission received.</strong> The university entry has been saved. You can now add another university.
+      <div style="margin-top:10px"><button type="button" class="mini-btn" id="anotherBtn">Add another university</button></div>
+    </div>
+
+    <form id="catalogueForm">
+      <section class="panel">
+        <div class="panel-head"><div class="num">1</div><div><h2>Contributor details</h2><p>Who is submitting this entry?</p></div></div>
+        <div class="grid">
+          <div class="field"><label for="memberName">Your name *</label><input id="memberName" name="memberName" autocomplete="name" required></div>
+          <div class="field"><label for="memberEmail">IIT KGP email *</label><input id="memberEmail" name="memberEmail" type="email" placeholder="name@iitkgp.ac.in" required></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><div class="num">2</div><div><h2>Basic university information</h2><p>Identification and official links.</p></div></div>
+        <div class="grid">
+          <div class="field"><label for="university">University name *</label><input id="university" name="university" required></div>
+          <div class="field"><label for="country">Country *</label><input id="country" name="country" required></div>
+          <div class="field"><label for="city">City</label><input id="city" name="city"></div>
+          <div class="field"><label for="universityType">Institution type</label><select id="universityType" name="universityType"><option value="">Select</option><option>Public</option><option>Private</option><option>Research institute</option><option>Other</option></select></div>
+          <div class="field full"><label for="website">Official university website *</label><input id="website" name="website" type="url" placeholder="https://" required></div>
+          <div class="field full"><label for="admissionsUrl">International admissions / application portal <span class="optional">(optional)</span></label><input id="admissionsUrl" name="admissionsUrl" type="url" placeholder="https://"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><div class="num">3</div><div><h2>Rankings</h2><p>Always mention the ranking edition or year.</p></div></div>
+        <div class="grid">
+          <div class="field"><label for="qsRank">QS World University Ranking</label><input id="qsRank" name="qsRank" placeholder="e.g. 125 or 201–250"></div>
+          <div class="field"><label for="qsYear">QS ranking year</label><input id="qsYear" name="qsYear" placeholder="e.g. 2026"></div>
+          <div class="field"><label for="subjectRank">QS subject ranking <span class="optional">(optional)</span></label><input id="subjectRank" name="subjectRank" placeholder="Subject and rank"></div>
+          <div class="field"><label for="otherRank">Other relevant ranking <span class="optional">(optional)</span></label><input id="otherRank" name="otherRank" placeholder="Ranking body, category and rank"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><div class="num">4</div><div><h2>Courses and academics</h2><p>Programmes relevant to prospective Indian applicants.</p></div></div>
+        <div class="grid">
+          <div class="field"><label for="degreeLevels">Degree levels offered</label><input id="degreeLevels" name="degreeLevels" placeholder="e.g. Bachelor's, Master's, PhD"></div>
+          <div class="field"><label for="language">Language of instruction</label><input id="language" name="language" placeholder="e.g. English, German, bilingual"></div>
+          <div class="field full"><label>Relevant courses / programmes</label><div id="courseList" class="repeat-list"><div class="repeat-row"><input name="courses[]" aria-label="Course or programme name" placeholder="e.g. MSc Computer Science"><button type="button" class="mini-btn remove-row" aria-label="Remove course">Remove</button></div></div><button type="button" class="mini-btn add-btn" id="addCourse">+ Add another course</button></div>
+          <div class="field full"><label for="academicNotes">Other academic details <span class="optional">(optional)</span></label><textarea id="academicNotes" name="academicNotes" placeholder="Departments, notable programmes, research strengths, eligibility notes..."></textarea></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><div class="num">5</div><div><h2>Admissions</h2><p>Application route and requirements for international applicants.</p></div></div>
+        <div class="grid">
+          <div class="field"><label for="gateway">Admission gateway / route</label><input id="gateway" name="gateway" placeholder="e.g. Direct university application, UCAS"></div>
+          <div class="field"><label for="deadlines">Typical application deadlines</label><input id="deadlines" name="deadlines" placeholder="Mention intake and year if known"></div>
+          <div class="field"><label for="englishTest">English proficiency requirements</label><input id="englishTest" name="englishTest" placeholder="e.g. IELTS / TOEFL and minimum scores"></div>
+          <div class="field"><label for="otherTests">Other tests / requirements</label><input id="otherTests" name="otherTests" placeholder="e.g. GRE, portfolio, entrance test"></div>
+          <div class="field full"><label for="eligibility">Eligibility and application notes</label><textarea id="eligibility" name="eligibility" placeholder="Academic prerequisites, documents, application steps, etc."></textarea></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><div class="num">6</div><div><h2>Fees and funding</h2><p>Specify currency, academic year and whether amounts are annual or per programme.</p></div></div>
+        <div class="grid">
+          <div class="field"><label for="tuition">Tuition fee</label><input id="tuition" name="tuition" placeholder="e.g. €15,000 per year"></div>
+          <div class="field"><label for="livingCost">Estimated living expenses</label><input id="livingCost" name="livingCost" placeholder="e.g. €900–1,200 per month"></div>
+          <div class="field"><label for="applicationFee">Application fee</label><input id="applicationFee" name="applicationFee" placeholder="Amount and currency"></div>
+          <div class="field"><label for="feeYear">Fee reference year</label><input id="feeYear" name="feeYear" placeholder="e.g. 2026–27"></div>
+          <div class="field full"><label for="scholarships">Scholarships / funding for international students</label><textarea id="scholarships" name="scholarships" placeholder="Scholarship name, eligibility, coverage and official link if available"></textarea></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><div class="num">7</div><div><h2>Acceptance rate and opportunities</h2><p>Do not treat estimates as official statistics.</p></div></div>
+        <div class="grid">
+          <div class="field"><label for="acceptanceRate">Acceptance rate</label><input id="acceptanceRate" name="acceptanceRate" placeholder="e.g. 12% (only if source is credible)"></div>
+          <div class="field"><label for="acceptanceYear">Acceptance-rate year / context</label><input id="acceptanceYear" name="acceptanceYear" placeholder="Year, level or applicant category"></div>
+          <div class="field full"><label for="opportunities">Other opportunities for Indian students</label><textarea id="opportunities" name="opportunities" placeholder="Exchange programmes, research internships, assistantships, industry links, etc."></textarea></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><div class="num">8</div><div><h2>Sources and supporting material</h2><p>Include sources so the catalogue can be checked before publication.</p></div></div>
+        <div class="grid">
+          <div class="field full"><label>Source URLs *</label><div id="sourceList" class="repeat-list"><div class="repeat-row"><input name="sources[]" type="url" aria-label="Source URL" placeholder="https://official-source.example" required><button type="button" class="mini-btn remove-row" aria-label="Remove source">Remove</button></div></div><button type="button" class="mini-btn add-btn" id="addSource">+ Add another source</button><small class="help">At least one source is required. Prefer official university, government or ranking-body pages.</small></div>
+          <div class="field full"><label for="extraNotes">Additional notes for the catalogue team <span class="optional">(optional)</span></label><textarea id="extraNotes" name="extraNotes" placeholder="Anything useful that does not fit above, or points that need verification..."></textarea></div>
+          <div class="field full"><label for="attachment">Supporting file <span class="optional">(optional)</span></label><div class="filebox"><input id="attachment" name="attachment" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png"><small class="help">One file, up to 8 MB. Brochures, official fee documents or course lists are useful. Do not upload confidential or personal documents.</small><div id="fileName" class="file-list" aria-live="polite"></div></div></div>
+        </div>
+      </section>
+
+      <div class="panel actions">
+        <p class="required-note">Please review the details and source links before submitting.</p>
+        <button class="submit" id="submitBtn" type="submit">Submit university entry</button>
+        <div id="formStatus" class="status" role="status" aria-live="polite"></div>
+      </div>
+    </form>
+    <footer class="footer">Students' International Relations Cell · IIT Kharagpur<br><a href="https://ircell.iitkgp.ac.in/" target="_blank" rel="noopener">ircell.iitkgp.ac.in</a></footer>
+  </main>
+<script>
+  const form = document.getElementById('catalogueForm');
+  const statusBox = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('submitBtn');
+  const successCard = document.getElementById('successCard');
+  const fileInput = document.getElementById('attachment');
+
+  function addRepeatRow(containerId, inputName, placeholder, type='text') {
+    const container = document.getElementById(containerId);
+    const row = document.createElement('div');
+    row.className = 'repeat-row';
+    const input = document.createElement('input');
+    input.name = inputName; input.type = type; input.placeholder = placeholder;
+    input.setAttribute('aria-label', inputName === 'sources[]' ? 'Source URL' : 'Course or programme name');
+    if (inputName === 'sources[]') input.required = true;
+    const remove = document.createElement('button');
+    remove.type = 'button'; remove.className = 'mini-btn remove-row'; remove.textContent = 'Remove';
+    remove.addEventListener('click', () => row.remove());
+    row.append(input, remove); container.append(row); input.focus();
+  }
+  document.getElementById('addCourse').addEventListener('click', () => addRepeatRow('courseList','courses[]','e.g. MSc Data Science'));
+  document.getElementById('addSource').addEventListener('click', () => addRepeatRow('sourceList','sources[]','https://','url'));
+  document.querySelectorAll('.remove-row').forEach(btn => btn.addEventListener('click', () => {
+    const rows = btn.closest('.repeat-list');
+    if (rows.children.length > 1) btn.closest('.repeat-row').remove();
+    else { const input = btn.closest('.repeat-row').querySelector('input'); input.value=''; }
+  }));
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    document.getElementById('fileName').textContent = file ? `${file.name} (${(file.size/1024/1024).toFixed(2)} MB)` : '';
+  });
+
+  function collectForm() {
+    const data = {};
+    new FormData(form).forEach((value, key) => {
+      if (key.endsWith('[]')) {
+        const clean = key.slice(0,-2);
+        if (!data[clean]) data[clean] = [];
+        if (String(value).trim()) data[clean].push(String(value).trim());
+      } else if (key !== 'attachment') data[key] = String(value).trim();
+    });
+    return data;
+  }
+  function setStatus(message, kind='') {
+    statusBox.textContent = message;
+    statusBox.className = 'status' + (kind ? ' ' + kind : '');
+  }
+  function fileToPayload(file) {
+    return new Promise((resolve, reject) => {
+      if (!file) return resolve(null);
+      if (file.size > 8 * 1024 * 1024) return reject(new Error('The selected file is larger than 8 MB.'));
+      const reader = new FileReader();
+      reader.onload = () => resolve({name:file.name, mimeType:file.type || 'application/octet-stream', data:String(reader.result).split(',')[1]});
+      reader.onerror = () => reject(new Error('Could not read the selected file. Please try again.'));
+      reader.readAsDataURL(file);
+    });
+  }
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    submitBtn.disabled = true; submitBtn.textContent = 'Submitting…'; setStatus('Sending your entry securely…');
+    try {
+      const payload = collectForm();
+      payload.attachment = await fileToPayload(fileInput.files[0]);
+      if (typeof google === 'undefined' || !google.script || !google.script.run) {
+        throw new Error('This form must be opened from its deployed Google Apps Script web-app URL.');
+      }
+      google.script.run
+        .withSuccessHandler(result => {
+          submitBtn.disabled = false; submitBtn.textContent = 'Submit university entry';
+          if (result && result.ok) {
+            successCard.classList.add('show'); form.reset();
+            document.getElementById('courseList').innerHTML = '<div class="repeat-row"><input name="courses[]" aria-label="Course or programme name" placeholder="e.g. MSc Computer Science"><button type="button" class="mini-btn remove-row" aria-label="Remove course">Remove</button></div>';
+            document.getElementById('sourceList').innerHTML = '<div class="repeat-row"><input name="sources[]" type="url" aria-label="Source URL" placeholder="https://official-source.example" required><button type="button" class="mini-btn remove-row" aria-label="Remove source">Remove</button></div>';
+            document.querySelectorAll('.remove-row').forEach(btn => btn.addEventListener('click', () => { const rows=btn.closest('.repeat-list'); if(rows.children.length>1) btn.closest('.repeat-row').remove(); else btn.closest('.repeat-row').querySelector('input').value=''; }));
+            document.getElementById('fileName').textContent = '';
+            setStatus('Saved successfully.'); successCard.scrollIntoView({behavior:'smooth',block:'center'});
+          } else setStatus((result && result.message) || 'Submission could not be saved. Please try again.','error');
+        })
+        .withFailureHandler(error => {
+          submitBtn.disabled = false; submitBtn.textContent = 'Submit university entry';
+          setStatus(error && error.message ? error.message : 'Submission failed. Please try again.','error');
+        })
+        .submitCatalogue(payload);
+    } catch (error) {
+      submitBtn.disabled = false; submitBtn.textContent = 'Submit university entry'; setStatus(error.message,'error');
+    }
+  });
+  document.getElementById('anotherBtn').addEventListener('click', () => {
+    successCard.classList.remove('show'); setStatus(''); window.scrollTo({top:0,behavior:'smooth'});
+  });
+</script>
+</body>
+</html>
